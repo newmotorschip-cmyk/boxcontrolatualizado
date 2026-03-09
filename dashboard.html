@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BoxControl PRO - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo" id="brandLogoMini">BC</div>
+        <div class="brand-text">
+          <h2>BoxControl <span class="pro">PRO</span></h2>
+          <p class="small muted">Gestão Automotiva</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li class="menu-item active" data-page="dashboard">Dashboard</li>
+          <li class="menu-item" data-page="clientes">Clientes</li>
+          <li class="menu-item" data-page="ordem-servico">Ordem de Serviço</li>
+          <li class="menu-item" data-page="checklist">Checklist</li>
+          <li class="menu-item" data-page="carros-servico">Carros em Serviço</li>
+          <li class="menu-item" data-page="estoque">Estoque</li>
+          <li class="menu-item" data-page="boletos">Boletos</li>
+          <li class="menu-item" data-page="funcionarios">Funcionários</li>
+          <li class="menu-item" data-page="historico">Histórico / Financeiro</li>
+          <li class="menu-item" data-page="minha-empresa">Minha Empresa</li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="pill">
+          <span class="dot"></span>
+          <span class="small">LocalStorage • Offline</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 id="topbarTitle">Dashboard</h1>
+          <div class="crumb small muted" id="topbarCrumb">Visão geral da oficina</div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="mode-box">
+            <label class="small muted">Modo</label>
+            <select id="modeSelect">
+              <option value="admin">Admin</option>
+              <option value="funcionario">Funcionário</option>
+            </select>
+          </div>
+
+          <div class="mode-box" id="funcSelectWrap" style="display:none;">
+            <label class="small muted">Funcionário</label>
+            <select id="funcSelect">
+              <option value="">Selecione</option>
+            </select>
+          </div>
+
+          <button class="btn-logout" id="btnLogout">Sair</button>
+        </div>
+      </header>
+
+      <section class="cards" id="quickCards">
+        <div class="card btn-primary" data-action="nova-ordem">
+          <div class="card-title">Nova Ordem</div>
+          <div class="card-sub small">Criar OS completa</div>
+        </div>
+
+        <div class="card btn-secondary" data-action="clientes">
+          <div class="card-title">Clientes</div>
+          <div class="card-sub small">Buscar / cadastrar</div>
+        </div>
+
+        <div class="card btn-dark" data-action="carros-servico">
+          <div class="card-title">Kanban</div>
+          <div class="card-sub small">Status de carros</div>
+        </div>
+      </section>
+
+      <div id="content-area"></div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
